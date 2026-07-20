@@ -88,13 +88,12 @@ canvas#universe {
 }
 
 .floating-buttons {
-  position: fixed;
-  bottom: 28px;
-  left: 28px;
+  margin-top: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
   z-index: 500;
+  padding-bottom: 0.5rem;
 }
 
 .fb-btn {
@@ -161,9 +160,8 @@ canvas#universe {
 
 @media (max-width: 768px) {
   .floating-buttons {
-    bottom: 20px;
-    left: 16px;
     gap: 8px;
+    padding-bottom: 0.25rem;
   }
   .fb-btn {
     width: 36px;
