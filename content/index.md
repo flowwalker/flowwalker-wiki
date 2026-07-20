@@ -19,3 +19,5 @@ title: 首页
 1. 在 Obsidian 中打开 `content/` 文件夹作为 Vault
 2. 写 Markdown 笔记，用 `[[双链]]` 互相引用
 3. push 到 GitHub，自动构建发布
+
+[[doc/result-highlighting]]
