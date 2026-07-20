@@ -5,7 +5,7 @@
 // 正文字体:优先苹方,依次回退华文黑体/微软雅黑
 // (:root:root 提高优先级,覆盖 Quartz 在末尾追加的 :root 变量定义)
 :root:root {
-  --titleFont: "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
-  --headerFont: "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
-  --bodyFont: "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+  --titleFont: "Comic Neue", "LXGW WenKai", "霞鹜文楷", "STKaiti", "Microsoft YaHei", sans-serif;
+  --headerFont: "Comic Neue", "LXGW WenKai", "霞鹜文楷", "STKaiti", "Microsoft YaHei", sans-serif;
+  --bodyFont: "Comic Neue", "LXGW WenKai", "霞鹜文楷", "STKaiti", "Microsoft YaHei", sans-serif;
 }
