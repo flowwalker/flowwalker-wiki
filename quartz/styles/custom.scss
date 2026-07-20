@@ -9,3 +9,12 @@
   --headerFont: "Comic Neue", "LXGW WenKai", "霞鹜文楷", "STKaiti", "Microsoft YaHei", sans-serif;
   --bodyFont: "Comic Neue", "LXGW WenKai", "霞鹜文楷", "STKaiti", "Microsoft YaHei", sans-serif;
 }
+
+/* 隐藏原始搜索按钮（浮动按钮负责触发） */
+.left .search > .search-button {
+  display: none;
+}
+/* 隐藏原始暗色模式按钮（浮动按钮负责触发） */
+.left .darkmode {
+  display: none;
+}

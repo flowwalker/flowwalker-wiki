@@ -1,5 +1,19 @@
-const userPref = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"
-const currentTheme = localStorage.getItem("theme") ?? userPref
+const saved = localStorage.getItem("theme")
+let currentTheme: string
+if (saved === "dark" || saved === "light") {
+  currentTheme = saved
+} else {
+  const mqDark = window.matchMedia("(prefers-color-scheme: dark)")
+  const mqLight = window.matchMedia("(prefers-color-scheme: light)")
+  if (mqDark.matches) {
+    currentTheme = "dark"
+  } else if (mqLight.matches) {
+    currentTheme = "light"
+  } else {
+    const h = new Date().getHours()
+    currentTheme = h >= 18 || h < 6 ? "dark" : "light"
+  }
+}
 document.documentElement.setAttribute("saved-theme", currentTheme)
 
 const emitThemeChangeEvent = (theme: "light" | "dark") => {

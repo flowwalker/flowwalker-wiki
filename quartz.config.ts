@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "flowwalker 的知识库",
+    pageTitle: "flowwalker的悟道Wiki",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
