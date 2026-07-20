@@ -20,4 +20,4 @@ title: 首页
 2. 写 Markdown 笔记，用 `[[双链]]` 互相引用
 3. push 到 GitHub，自动构建发布
 
-[[doc/result-highlighting]]
+
