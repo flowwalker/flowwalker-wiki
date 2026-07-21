@@ -264,7 +264,7 @@ export function renderPage(
     <html lang={lang} dir={direction}>
       <Head {...componentData} />
       <body data-slug={slug}>
-        <div id="loading-box" data-persist="true" onclick="document.getElementById('loading-box').classList.add('loaded')">
+        <div id="loading-box" class="loaded" onclick="document.getElementById('loading-box').classList.add('loaded')">
           <div class="loading-bar"></div>
           <div class="loading-bg">
             <img class="loading-img" alt="加载中" src={avatarPath} />
@@ -274,11 +274,19 @@ export function renderPage(
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){
+  // SPA navigation: preloader already handled, keep hidden
+  if (window.__wikiPreloaderDone) return;
+  window.__wikiPreloaderDone = true;
+
+  var box = document.getElementById('loading-box');
+  if (!box) return;
+  // Show preloader only on initial page load
+  box.classList.remove('loaded');
+
   var start = Date.now(), minShow = 1500;
   function endLoading() {
     var remain = minShow - (Date.now() - start);
     setTimeout(function() {
-      var box = document.getElementById('loading-box');
       if (box) box.classList.add('loaded');
     }, Math.max(0, remain));
   }
