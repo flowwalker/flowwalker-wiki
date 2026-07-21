@@ -263,9 +263,11 @@ export function renderPage(
   const doc = (
     <html lang={lang} dir={direction}>
       <Head {...componentData} />
+      <link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css" />
+      <style>{`.pace .pace-progress{background:#555;}`}</style>
+      <script async src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options='{"restartOnRequestAfter":false,"eventLag":false}'></script>
       <body data-slug={slug}>
         <div id="loading-box" onclick="document.getElementById('loading-box').classList.add('loaded')">
-          <div class="loading-bar"></div>
           <div class="loading-bg">
             <img class="loading-img" alt="加载中" src={avatarPath} />
             <div class="loading-image-dot"></div>
