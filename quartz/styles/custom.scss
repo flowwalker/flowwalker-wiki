@@ -28,6 +28,11 @@
   height: calc(100vh - 3rem);
 }
 
+/* 暗色模式：左边栏使用偏灰背景，与正文区域区分 */
+html[saved-theme="dark"] .sidebar.left {
+  background: color-mix(in srgb, var(--lightgray) 88%, transparent);
+}
+
 @media all and (max-width: 800px) {
   .sidebar.left {
     margin: 0;

@@ -46,6 +46,7 @@ PageTitle.css = `
 
 .page-title-split {
   line-height: 1.2;
+  text-align: center;
 }
 
 .page-title-avatar-link {
@@ -60,6 +61,7 @@ PageTitle.css = `
   border-radius: 50%;
   object-fit: cover;
   display: block;
+  margin: 0 auto;
   border: 2px solid var(--lightgray);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
