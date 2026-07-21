@@ -57,7 +57,7 @@ const FloatingButtons: QuartzComponent = () => {
         </button>
         <a
           class="fb-btn fb-back"
-          href="https://flowwalker.top"
+          href="https://flowwalker.github.io"
           target="_blank"
           rel="noopener"
           title="归返本山→主博客"
