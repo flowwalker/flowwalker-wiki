@@ -10,11 +10,22 @@
   --bodyFont: "Comic Neue", "LXGW WenKai", "霞鹜文楷", "STKaiti", "Microsoft YaHei", sans-serif;
 }
 
-/* 隐藏原始搜索按钮（浮动按钮负责触发） */
-.left .search > .search-button {
-  display: none;
+/* 隐藏原始搜索/暗色模式/阅读模式按钮行（浮动按钮负责触发） */
+.left > .flex-component {
+  height: 0;
+  overflow: hidden;
 }
-/* 隐藏原始暗色模式按钮（浮动按钮负责触发） */
-.left .darkmode {
-  display: none;
+
+/* 左侧边栏半透明边框 */
+.sidebar.left {
+  border-right: 1px solid rgba(127, 127, 127, 0.10);
+}
+
+/* --- 阅读模式：真正隐藏右侧栏并释放 Grid 空间 --- */
+:root[reader-mode="on"] #quartz-body {
+  grid-template-columns: 320px auto 0px;
+}
+
+:root[reader-mode="on"] .sidebar.right {
+  display: none !important;
 }
