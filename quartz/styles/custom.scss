@@ -21,11 +21,25 @@
   border-right: 1px solid rgba(127, 127, 127, 0.10);
 }
 
-/* --- 阅读模式：真正隐藏右侧栏并释放 Grid 空间 --- */
-:root[reader-mode="on"] #quartz-body {
-  grid-template-columns: 320px auto 0px;
+/* 中间内容区域左右留白 */
+.center > article {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-:root[reader-mode="on"] .sidebar.right {
-  display: none !important;
+/* --- 阅读模式：Grid 列宽过渡动画 --- */
+#quartz-body {
+  transition: grid-template-columns 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 右侧边栏滑入/滑出动画 */
+.sidebar.right {
+  overflow: hidden;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 阅读模式：收起右侧列 + 侧栏滑出 */
+:root[reader-mode="on"] #quartz-body {
+  grid-template-columns: 320px auto 0px;
 }

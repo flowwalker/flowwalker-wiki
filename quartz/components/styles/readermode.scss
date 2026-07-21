@@ -23,6 +23,8 @@
 
 :root[reader-mode="on"] {
   & .sidebar.right {
-    display: none;
+    opacity: 0;
+    transform: translateX(24px);
+    pointer-events: none;
   }
 }
