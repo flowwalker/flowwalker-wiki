@@ -273,12 +273,16 @@ export function renderPage(
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){
+  var start = Date.now(), minShow = 1500;
   function endLoading() {
-    var box = document.getElementById('loading-box');
-    if (box) box.classList.add('loaded');
+    var remain = minShow - (Date.now() - start);
+    setTimeout(function() {
+      var box = document.getElementById('loading-box');
+      if (box) box.classList.add('loaded');
+    }, Math.max(0, remain));
   }
   window.addEventListener('load', endLoading);
-  setTimeout(endLoading, 2500);
+  setTimeout(endLoading, 3000);
 })();`,
           }}
         />
