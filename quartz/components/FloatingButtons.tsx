@@ -284,6 +284,24 @@ FloatingButtons.afterDOMLoaded = `
   ctx = canvas.getContext('2d');
   for (var j = 0; j < i; j++) { particles.push(new Particle()); particles[j].reset(); }
   render();
+
+  // SPA navigation safety: verify canvas survived DOM morphing intact
+  document.addEventListener('nav', function() {
+    var c = document.getElementById('universe');
+    if (!c) return;
+    // If canvas element was replaced during morphing, re-acquire context
+    if (c !== canvas) {
+      canvas = c;
+      ctx = c.getContext('2d');
+    }
+    // Ensure correct bitmap dimensions (fresh canvas defaults to 300x150)
+    var w = window.innerWidth, h = window.innerHeight;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+      n = w; e = h;
+    }
+  });
 })();
 `
 
