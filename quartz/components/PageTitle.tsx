@@ -1,4 +1,4 @@
-import { pathToRoot } from "../util/path"
+import { joinSegments, pathToRoot } from "../util/path"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
@@ -6,6 +6,8 @@ import { i18n } from "../i18n"
 const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzComponentProps) => {
   const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
   const baseDir = pathToRoot(fileData.slug!)
+
+  const avatarPath = joinSegments(baseDir, "static/avatar.png")
 
   // Split "🚀flowwalker的悟道Wiki" into sub + main title
   // main = "悟道Wiki" (larger, links to wiki), sub = "flowwalker" (smaller, links to blog)
@@ -15,6 +17,9 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
     const wikiName = title.slice(deIndex + 1)
     return (
       <h2 class={classNames(displayClass, "page-title", "page-title-split")}>
+        <a href={baseDir} class="page-title-avatar-link">
+          <img class="page-title-avatar" src={avatarPath} alt="" />
+        </a>
         <a href={baseDir} class="page-title-main">
           {wikiName}
         </a>
@@ -41,6 +46,28 @@ PageTitle.css = `
 
 .page-title-split {
   line-height: 1.2;
+}
+
+.page-title-avatar-link {
+  display: block;
+  margin-bottom: 0.6rem;
+  line-height: 0;
+}
+
+.page-title-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 2px solid var(--lightgray);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-title-avatar-link:hover .page-title-avatar {
+  border-color: var(--tertiary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .page-title-main {

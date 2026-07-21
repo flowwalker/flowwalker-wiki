@@ -82,7 +82,10 @@ export default (() => {
           </>
         )}
 
-        <link rel="icon" href={iconPath} />
+        <link rel="icon" type="image/svg+xml" href={joinSegments(baseDir, "static/favicon.svg")} />
+        <link rel="icon" type="image/png" sizes="96x96" href={joinSegments(baseDir, "static/favicon-96x96.png")} />
+        <link rel="apple-touch-icon" href={joinSegments(baseDir, "static/apple-touch-icon.png")} />
+        <link rel="manifest" href={joinSegments(baseDir, "static/site.webmanifest")} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 

@@ -16,9 +16,28 @@
   overflow: hidden;
 }
 
-/* 左侧边栏半透明边框 */
+/* 左侧边栏：半透明悬浮毛玻璃效果 */
 .sidebar.left {
-  border-right: 1px solid rgba(127, 127, 127, 0.10);
+  border-right: none;
+  margin: 1.5rem 0 1.5rem 1.5rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--light) 82%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  height: calc(100vh - 3rem);
+}
+
+@media all and (max-width: 800px) {
+  .sidebar.left {
+    margin: 0;
+    border-radius: 0;
+    background: var(--light);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    height: unset;
+  }
 }
 
 /* 中间内容区域：居中占据 3/5 宽度（桌面端），平板/手机自适应 */
