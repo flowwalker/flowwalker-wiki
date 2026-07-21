@@ -21,10 +21,11 @@
   border-right: 1px solid rgba(127, 127, 127, 0.10);
 }
 
-/* 中间内容区域左右留白 */
-.center > article {
+/* 中间内容区域左右留白（含页眉/正文/页脚） */
+.center {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  box-sizing: border-box;
 }
 
 /* --- 阅读模式：Grid 列宽过渡动画 --- */
@@ -32,8 +33,9 @@
   transition: grid-template-columns 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 右侧边栏滑入/滑出动画 */
+/* 右侧边栏左边框 + 滑入/滑出动画 */
 .sidebar.right {
+  border-left: 1px solid rgba(127, 127, 127, 0.10);
   overflow: hidden;
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
