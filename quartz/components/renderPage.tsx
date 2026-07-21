@@ -295,6 +295,7 @@ export function renderPage(
 })();`,
           }}
         />
+        <canvas id="universe" data-persist="true"></canvas>
         <div id="quartz-root" class="page">
           <Body {...componentData}>
             {LeftComponent}

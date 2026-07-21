@@ -3,7 +3,6 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 const FloatingButtons: QuartzComponent = () => {
   return (
     <>
-      <canvas id="universe" data-persist="true"></canvas>
       <div class="floating-buttons">
         <button
           class="fb-btn fb-readermode"
