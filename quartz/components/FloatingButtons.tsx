@@ -3,7 +3,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 const FloatingButtons: QuartzComponent = () => {
   return (
     <>
-      <canvas id="universe"></canvas>
+      <canvas id="universe" data-persist="true"></canvas>
       <div class="floating-buttons">
         <button
           class="fb-btn fb-readermode"
@@ -204,6 +204,8 @@ canvas#universe {
 // Universe particle animation
 FloatingButtons.afterDOMLoaded = `
 (function(){
+  if (window._universeAnimRunning) return;
+  window._universeAnimRunning = true;
   var canvas = document.getElementById('universe');
   if (!canvas) return;
   var ctx, n, e, i, particles = [];
