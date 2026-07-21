@@ -46,6 +46,15 @@ footer {
   }
 }
 
+/* 覆盖 base.scss 中 .page>#quartz-body footer 的 min-width:100% 和 margin-left:0 */
+/* 覆盖 base.scss 中 .page>#quartz-body .page-header 的 margin（阻止居中） */
+.page > #quartz-body .page-header,
+.page > #quartz-body footer {
+  min-width: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* --- 阅读模式：Grid 列宽过渡动画 --- */
 #quartz-body {
   transition: grid-template-columns 0.35s cubic-bezier(0.4, 0, 0.2, 1);
