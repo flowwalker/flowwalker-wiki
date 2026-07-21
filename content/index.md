@@ -9,11 +9,11 @@ title: 首页
 
 ## 我的四处仙山
 
-- [主博客](https://flowwalker.top)：生活随笔与综合记录
-- [数学博客](https://flowwalker.github.io/math-notes-blog/)
-- [物理博客](https://flowwalker.github.io/physics-notes-blog/)
-- [编程博客](https://flowwalker.github.io/coding-notes-blog/)
-- [工程笔记](https://flowwalker.github.io/engineering-notes-blog/)
+- <a href="https://flowwalker.top" target="_blank" rel="noopener">主博客</a>：生活随笔与综合记录
+- <a href="https://flowwalker.github.io/math-notes-blog/" target="_blank" rel="noopener">数学博客</a>
+- <a href="https://flowwalker.github.io/physics-notes-blog/" target="_blank" rel="noopener">物理博客</a>
+- <a href="https://flowwalker.github.io/coding-notes-blog/" target="_blank" rel="noopener">编程博客</a>
+- <a href="https://flowwalker.github.io/engineering-notes-blog/" target="_blank" rel="noopener">工程笔记</a>
 
 ## 启程
 

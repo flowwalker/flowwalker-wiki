@@ -23,7 +23,7 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
         <a href={baseDir} class="page-title-main">
           {wikiName}
         </a>
-        <a href="https://flowwalker.top" class="page-title-sub">
+        <a href="https://flowwalker.top" class="page-title-sub" target="_blank" rel="noopener">
           {blogName}
         </a>
       </h2>
