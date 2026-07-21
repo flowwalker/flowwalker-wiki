@@ -21,11 +21,26 @@
   border-right: 1px solid rgba(127, 127, 127, 0.10);
 }
 
-/* 中间内容区域左右留白（含页眉/正文/页脚） */
-.center {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  box-sizing: border-box;
+/* 中间内容区域：居中占据 3/5 宽度（桌面端），平板/手机自适应 */
+.center > *,
+footer {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media all and (max-width: 1200px) {
+  .center > *,
+  footer {
+    width: 80%;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .center > *,
+  footer {
+    width: 100%;
+  }
 }
 
 /* --- 阅读模式：Grid 列宽过渡动画 --- */
