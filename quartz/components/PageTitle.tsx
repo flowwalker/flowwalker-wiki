@@ -7,7 +7,7 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
   const baseDir = pathToRoot(fileData.slug!)
 
-  // Split "flowwalker的悟道Wiki" into sub + main title
+  // Split "🚀flowwalker的悟道Wiki" into sub + main title
   // main = "悟道Wiki" (larger, links to wiki), sub = "flowwalker" (smaller, links to blog)
   const deIndex = title.indexOf("的")
   if (deIndex > 0 && deIndex < title.length - 1) {
