@@ -59,8 +59,8 @@ const FloatingButtons: QuartzComponent = () => {
         <a
           class="fb-btn fb-back"
           href="https://flowwalker.top"
-          title="归返本山"
-          aria-label="归返本山"
+          title="归返本山→主博客"
+          aria-label="归返本山→主博客"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>

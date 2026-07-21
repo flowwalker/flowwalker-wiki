@@ -3,7 +3,7 @@ import { QuartzComponent, QuartzComponentProps } from "./types"
 import HeaderConstructor from "./Header"
 import BodyConstructor from "./Body"
 import { JSResourceToScriptElement, StaticResources } from "../util/resources"
-import { FullSlug, RelativeURL, joinSegments, normalizeHastElement } from "../util/path"
+import { FullSlug, RelativeURL, joinSegments, normalizeHastElement, pathToRoot } from "../util/path"
 import { clone } from "../util/clone"
 import { visit } from "unist-util-visit"
 import { Root, Element, ElementContent } from "hast"
@@ -259,10 +259,29 @@ export function renderPage(
 
   const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
   const direction = i18n(cfg.locale).direction ?? "ltr"
+  const avatarPath = joinSegments(pathToRoot(slug), "static/avatar.png")
   const doc = (
     <html lang={lang} dir={direction}>
       <Head {...componentData} />
       <body data-slug={slug}>
+        <div id="loading-box" onclick="document.getElementById('loading-box').classList.add('loaded')">
+          <div class="loading-bg">
+            <img class="loading-img" alt="加载中" src={avatarPath} />
+            <div class="loading-image-dot"></div>
+          </div>
+        </div>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){
+  function endLoading() {
+    var box = document.getElementById('loading-box');
+    if (box) box.classList.add('loaded');
+  }
+  window.addEventListener('load', endLoading);
+  setTimeout(endLoading, 2500);
+})();`,
+          }}
+        />
         <div id="quartz-root" class="page">
           <Body {...componentData}>
             {LeftComponent}
