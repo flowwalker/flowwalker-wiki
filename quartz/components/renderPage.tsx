@@ -265,6 +265,7 @@ export function renderPage(
       <Head {...componentData} />
       <body data-slug={slug}>
         <div id="loading-box" onclick="document.getElementById('loading-box').classList.add('loaded')">
+          <div class="loading-bar"></div>
           <div class="loading-bg">
             <img class="loading-img" alt="加载中" src={avatarPath} />
             <div class="loading-image-dot"></div>
