@@ -7,19 +7,19 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
   const baseDir = pathToRoot(fileData.slug!)
 
-  // Split "flowwalker的悟道Wiki" into main title + subtitle
-  // main links to blog homepage, subtitle links to wiki root
+  // Split "flowwalker的悟道Wiki" into sub + main title
+  // main = "悟道Wiki" (larger, links to wiki), sub = "flowwalker" (smaller, links to blog)
   const deIndex = title.indexOf("的")
   if (deIndex > 0 && deIndex < title.length - 1) {
-    const mainTitle = title.slice(0, deIndex)
-    const subTitle = title.slice(deIndex + 1)
+    const blogName = title.slice(0, deIndex)
+    const wikiName = title.slice(deIndex + 1)
     return (
       <h2 class={classNames(displayClass, "page-title", "page-title-split")}>
-        <a href="https://flowwalker.top" class="page-title-main">
-          {mainTitle}
+        <a href={baseDir} class="page-title-main">
+          {wikiName}
         </a>
-        <a href={baseDir} class="page-title-sub">
-          {subTitle}
+        <a href="https://flowwalker.top" class="page-title-sub">
+          {blogName}
         </a>
       </h2>
     )
@@ -40,20 +40,22 @@ PageTitle.css = `
 }
 
 .page-title-split {
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .page-title-main {
   color: var(--dark);
   font-weight: 700;
+  font-size: 1.15em;
   display: block;
 }
 
 .page-title-sub {
   color: var(--secondary);
   font-weight: 500;
-  font-size: 0.8em;
+  font-size: 0.72em;
   display: block;
+  margin-top: 0.15em;
 }
 `
 

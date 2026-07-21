@@ -9,9 +9,9 @@ title: 首页
 ## 我的其他站点
 
 - [主博客](https://flowwalker.top)：生活随笔与综合记录
-- [数学笔记](https://flowwalker.github.io/math-notes-blog/)
+- [数学博客](https://flowwalker.github.io/math-notes-blog/)
 - [物理博客](https://flowwalker.github.io/physics-notes-blog/)
-- [编程笔记](https://flowwalker.github.io/coding-notes-blog/)
+- [编程博客](https://flowwalker.github.io/coding-notes-blog/)
 - [工程笔记](https://flowwalker.github.io/engineering-notes-blog/)
 
 ## 怎么用
