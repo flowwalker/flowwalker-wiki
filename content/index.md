@@ -15,10 +15,12 @@ title: 首页
 - <a href="https://flowwalker.github.io/coding-notes-blog/" target="_blank" rel="noopener">编程博客</a>
 - <a href="https://flowwalker.github.io/engineering-notes-blog/" target="_blank" rel="noopener">工程笔记</a>
 
-## 启程
+## 发散入口
 
-[[诗词之年]]
+这里不按单一学科收束，而是从生活、文字、数学和经验的缝隙里分别出发。
+
+- [[数理漫游]]：从一道题出发，向结构、方法和直觉漫游。
+- [[诗词之年]]：从旧诗词里回看时间和心境。
 
 +1
-
 
